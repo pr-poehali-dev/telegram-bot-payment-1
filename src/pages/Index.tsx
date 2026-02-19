@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useCallback } from "react";
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import DonateSection from "@/components/DonateSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import ProfileSection from "@/components/ProfileSection";
+import SettingsSection from "@/components/SettingsSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const handleNavigate = useCallback((section: string) => {
+    if (section === 'hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation onNavigate={handleNavigate} />
+      <HeroSection onNavigate={handleNavigate} />
+      <FeaturesSection />
+      <ProfileSection />
+      <DonateSection />
+      <SettingsSection />
+      <Footer />
     </div>
   );
 };
