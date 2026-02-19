@@ -18,7 +18,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         <div className="opacity-0 animate-fade-in mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
             <Icon name="Zap" size={14} />
-            Поддержи проект криптовалютой
+            Support the project with crypto
           </span>
         </div>
 
@@ -30,8 +30,8 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         </h1>
 
         <p className="opacity-0 animate-fade-in-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Быстрые и безопасные пожертвования через TRON TRC-20 и PayPal.
-          Поддержи любимого автора в один клик.
+          Fast and secure donations via TRON TRC-20 and PayPal.
+          Support your favorite creator in one click.
         </p>
 
         <div className="opacity-0 animate-fade-in-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
@@ -41,7 +41,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             onClick={() => onNavigate('donate')}
           >
             <Icon name="Heart" size={20} />
-            Сделать донат
+            Donate Now
           </Button>
           <Button
             size="lg"
@@ -50,7 +50,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             onClick={() => onNavigate('about')}
           >
             <Icon name="Info" size={20} />
-            Подробнее
+            Learn More
           </Button>
         </div>
 
@@ -62,6 +62,10 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           <div className="flex items-center gap-2">
             <Icon name="CreditCard" size={20} />
             <span className="text-sm">PayPal F&F</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Icon name="Mail" size={20} />
+            <span className="text-sm">Email</span>
           </div>
         </div>
       </div>

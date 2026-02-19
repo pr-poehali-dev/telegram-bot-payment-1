@@ -11,13 +11,13 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-6 text-muted-foreground">
+            <a href="mailto:tiktokersq32@gmail.com" className="hover:text-foreground transition-colors flex items-center gap-1.5">
+              <Icon name="Mail" size={16} />
+              Email
+            </a>
             <a href="#" className="hover:text-foreground transition-colors flex items-center gap-1.5">
               <Icon name="MessageCircle" size={16} />
               Telegram
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors flex items-center gap-1.5">
-              <Icon name="Github" size={16} fallback="Code" />
-              GitHub
             </a>
             <a href="#" className="hover:text-foreground transition-colors flex items-center gap-1.5">
               <Icon name="Twitter" size={16} fallback="AtSign" />

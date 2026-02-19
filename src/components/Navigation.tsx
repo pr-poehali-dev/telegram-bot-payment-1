@@ -20,15 +20,19 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
         <div className="hidden md:flex items-center gap-1">
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body" onClick={() => onNavigate('about')}>
             <Icon name="Info" size={16} />
-            О проекте
+            About
           </Button>
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body" onClick={() => onNavigate('profile')}>
             <Icon name="User" size={16} />
-            Профиль
+            Profile
+          </Button>
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body" onClick={() => onNavigate('proofs')}>
+            <Icon name="ShieldCheck" size={16} />
+            Proofs
           </Button>
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body" onClick={() => onNavigate('settings')}>
             <Icon name="Settings" size={16} />
-            Настройки
+            Settings
           </Button>
         </div>
 
@@ -38,7 +42,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
           onClick={() => onNavigate('donate')}
         >
           <Icon name="Heart" size={16} />
-          Донат
+          Donate
         </Button>
       </div>
     </nav>

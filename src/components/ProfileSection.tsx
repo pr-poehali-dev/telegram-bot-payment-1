@@ -3,9 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const stats = [
-  { label: "Поддержали", value: "1,247", icon: "Users" as const },
-  { label: "Собрано", value: "$12,580", icon: "TrendingUp" as const },
-  { label: "Проектов", value: "8", icon: "Folder" as const },
+  { label: "Supporters", value: "1,247", icon: "Users" as const },
+  { label: "Raised", value: "$12,580", icon: "TrendingUp" as const },
+  { label: "Projects", value: "8", icon: "Folder" as const },
 ];
 
 const ProfileSection = () => {
@@ -20,15 +20,15 @@ const ProfileSection = () => {
 
             <div className="flex-1 text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <h3 className="font-heading font-bold text-2xl">Автор проекта</h3>
+                <h3 className="font-heading font-bold text-2xl">Project Author</h3>
                 <Badge className="bg-primary/20 text-primary border-primary/30">
                   <Icon name="BadgeCheck" size={14} />
-                  Верифицирован
+                  Verified
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Создатель открытых проектов и контента. Каждый донат помогает развивать
-                новые идеи и делать мир лучше. Спасибо за вашу поддержку! 🚀
+                Creator of open-source projects and content. Every donation helps develop
+                new ideas and make the world a better place. Thank you for your support!
               </p>
 
               <div className="grid grid-cols-3 gap-4">

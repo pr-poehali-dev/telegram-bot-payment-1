@@ -11,7 +11,6 @@ const WALLETS = {
     symbol: "◈",
     address: "TXHWYwxR2Exj9MCn1wCLTfhi8sMvKUN1bj",
     color: "from-red-500 to-pink-500",
-    glow: "glow-pink",
     icon: "Coins" as const,
   },
   paypal: {
@@ -19,8 +18,14 @@ const WALLETS = {
     symbol: "💳",
     address: "greggorywright@aol.com",
     color: "from-blue-500 to-cyan-500",
-    glow: "glow-blue",
     icon: "CreditCard" as const,
+  },
+  email: {
+    name: "Email Contact",
+    symbol: "✉️",
+    address: "tiktokersq32@gmail.com",
+    color: "from-emerald-500 to-teal-500",
+    icon: "Mail" as const,
   },
 };
 
@@ -35,8 +40,8 @@ const DonateSection = () => {
     navigator.clipboard.writeText(address);
     setCopiedWallet(key);
     toast({
-      title: "Адрес скопирован!",
-      description: `${address.slice(0, 20)}...`,
+      title: "Copied!",
+      description: `${address.slice(0, 25)}...`,
     });
     setTimeout(() => setCopiedWallet(null), 2000);
   };
@@ -46,15 +51,15 @@ const DonateSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-heading font-800 text-4xl md:text-5xl mb-4">
-            <span className="gradient-text">Поддержать проект</span>
+            <span className="gradient-text">Support the Project</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Выберите удобный способ пожертвования
+            Choose your preferred donation method
           </p>
         </div>
 
         <div className="mb-10">
-          <p className="text-center text-sm text-muted-foreground mb-4">Выберите сумму (USD)</p>
+          <p className="text-center text-sm text-muted-foreground mb-4">Select amount (USD)</p>
           <div className="flex flex-wrap justify-center gap-3">
             {AMOUNTS.map((amount) => (
               <Button
@@ -79,13 +84,13 @@ const DonateSection = () => {
               }`}
               onClick={() => setSelectedAmount(-1)}
             >
-              Другая
+              Custom
             </Button>
           </div>
         </div>
 
         <Tabs defaultValue="tron" className="w-full">
-          <TabsList className="grid grid-cols-2 bg-card/50 border border-border/30 p-1 mb-6 h-auto">
+          <TabsList className="grid grid-cols-3 bg-card/50 border border-border/30 p-1 mb-6 h-auto">
             {Object.entries(WALLETS).map(([key, wallet]) => (
               <TabsTrigger
                 key={key}
@@ -100,7 +105,7 @@ const DonateSection = () => {
 
           {Object.entries(WALLETS).map(([key, wallet]) => (
             <TabsContent key={key} value={key}>
-              <Card className={`gradient-border p-8 bg-card/80 backdrop-blur-sm`}>
+              <Card className="gradient-border p-8 bg-card/80 backdrop-blur-sm">
                 <div className="flex flex-col items-center text-center">
                   <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${wallet.color} flex items-center justify-center mb-6 animate-float`}>
                     <Icon name={wallet.icon} size={36} className="text-white" fallback="Coins" />
@@ -108,9 +113,11 @@ const DonateSection = () => {
 
                   <h3 className="font-heading font-bold text-2xl mb-2">{wallet.name}</h3>
                   <p className="text-muted-foreground mb-6">
-                    {selectedAmount && selectedAmount > 0
-                      ? `Отправьте $${selectedAmount} на адрес ниже`
-                      : "Скопируйте адрес для перевода"}
+                    {key === "email"
+                      ? "Send us a message or payment receipt"
+                      : selectedAmount && selectedAmount > 0
+                        ? `Send $${selectedAmount} to the address below`
+                        : "Copy the address to make a transfer"}
                   </p>
 
                   <div className="w-full max-w-lg bg-muted/50 rounded-xl p-4 flex items-center gap-3 mb-6">
@@ -133,20 +140,27 @@ const DonateSection = () => {
 
                   {key === "paypal" && (
                     <div className="space-y-3">
-                      <p className="text-sm text-muted-foreground">Отправьте на email выше через Friends & Family</p>
+                      <p className="text-sm text-muted-foreground">Send to the email above via Friends & Family</p>
                       <a
                         href="https://www.paypal.com/paypalme/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Button
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-heading font-semibold px-8 py-5 text-lg hover:opacity-90 transition-all"
-                        >
+                        <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-heading font-semibold px-8 py-5 text-lg hover:opacity-90 transition-all">
                           <Icon name="ExternalLink" size={18} />
-                          Открыть PayPal
+                          Open PayPal
                         </Button>
                       </a>
                     </div>
+                  )}
+
+                  {key === "email" && (
+                    <a href="mailto:tiktokersq32@gmail.com">
+                      <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-heading font-semibold px-8 py-5 text-lg hover:opacity-90 transition-all">
+                        <Icon name="Mail" size={18} />
+                        Send Email
+                      </Button>
+                    </a>
                   )}
                 </div>
               </Card>

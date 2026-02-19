@@ -14,10 +14,10 @@ const SettingsSection = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-heading font-800 text-4xl md:text-5xl mb-4">
-            <span className="gradient-text">Настройки</span>
+            <span className="gradient-text">Settings</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Персонализируйте ваш опыт
+            Customize your experience
           </p>
         </div>
 
@@ -29,8 +29,8 @@ const SettingsSection = () => {
                   <Icon name="Bell" size={20} className="text-primary" />
                 </div>
                 <div>
-                  <Label className="font-heading font-semibold text-base">Уведомления</Label>
-                  <p className="text-sm text-muted-foreground">Получать уведомления о новых донатах</p>
+                  <Label className="font-heading font-semibold text-base">Notifications</Label>
+                  <p className="text-sm text-muted-foreground">Receive notifications about new donations</p>
                 </div>
               </div>
               <Switch checked={notifications} onCheckedChange={setNotifications} />
@@ -44,8 +44,8 @@ const SettingsSection = () => {
                   <Icon name="EyeOff" size={20} className="text-accent" />
                 </div>
                 <div>
-                  <Label className="font-heading font-semibold text-base">Анонимные донаты</Label>
-                  <p className="text-sm text-muted-foreground">Скрывать ваше имя при пожертвованиях</p>
+                  <Label className="font-heading font-semibold text-base">Anonymous Donations</Label>
+                  <p className="text-sm text-muted-foreground">Hide your name when making donations</p>
                 </div>
               </div>
               <Switch checked={anonymous} onCheckedChange={setAnonymous} />
@@ -59,8 +59,8 @@ const SettingsSection = () => {
                   <Icon name="RefreshCw" size={20} className="text-secondary" />
                 </div>
                 <div>
-                  <Label className="font-heading font-semibold text-base">Авто-конвертация</Label>
-                  <p className="text-sm text-muted-foreground">Показывать суммы в USD автоматически</p>
+                  <Label className="font-heading font-semibold text-base">Auto-Convert</Label>
+                  <p className="text-sm text-muted-foreground">Automatically display amounts in USD</p>
                 </div>
               </div>
               <Switch checked={autoConvert} onCheckedChange={setAutoConvert} />

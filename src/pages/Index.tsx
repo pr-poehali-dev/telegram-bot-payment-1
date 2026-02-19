@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import DonateSection from "@/components/DonateSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProfileSection from "@/components/ProfileSection";
+import ProofsSection from "@/components/ProofsSection";
 import SettingsSection from "@/components/SettingsSection";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ const Index = () => {
       <HeroSection onNavigate={handleNavigate} />
       <FeaturesSection />
       <ProfileSection />
+      <ProofsSection />
       <DonateSection />
       <SettingsSection />
       <Footer />

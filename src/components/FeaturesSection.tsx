@@ -4,26 +4,26 @@ import Icon from "@/components/ui/icon";
 const features = [
   {
     icon: "Shield" as const,
-    title: "Безопасно",
-    description: "Прямые переводы на кошелёк без посредников и комиссий сервиса",
+    title: "Secure",
+    description: "Direct transfers to wallet with no middlemen or service fees",
     color: "from-green-500 to-emerald-500",
   },
   {
     icon: "Zap" as const,
-    title: "Мгновенно",
-    description: "Транзакции обрабатываются сетью блокчейна за секунды",
+    title: "Instant",
+    description: "Transactions processed by the blockchain network in seconds",
     color: "from-yellow-500 to-orange-500",
   },
   {
     icon: "Globe" as const,
-    title: "Глобально",
-    description: "Принимаем донаты из любой точки мира без ограничений",
+    title: "Global",
+    description: "Accept donations from anywhere in the world without restrictions",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: "Wallet" as const,
-    title: "Мультивалюта",
-    description: "Bitcoin, Ethereum, TRON TRC-20, PayPal и другие способы",
+    title: "Multi-Currency",
+    description: "TRON TRC-20, PayPal Friends & Family, and more options",
     color: "from-purple-500 to-pink-500",
   },
 ];
@@ -34,10 +34,10 @@ const FeaturesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-heading font-800 text-4xl md:text-5xl mb-4">
-            Почему <span className="gradient-text">CryptoDonate</span>?
+            Why <span className="gradient-text">CryptoDonate</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Простой и надёжный способ поддержать любимого автора
+            A simple and reliable way to support your favorite creator
           </p>
         </div>
 
