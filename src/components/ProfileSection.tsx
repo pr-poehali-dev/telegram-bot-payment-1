@@ -5,6 +5,7 @@ import Icon from "@/components/ui/icon";
 const stats = [
   { label: "Supporters", value: "1,247", icon: "Users" as const },
   { label: "Raised", value: "$12,580", icon: "TrendingUp" as const },
+  { label: "Videos on MEGA", value: "30,000+", icon: "Video" as const },
   { label: "Projects", value: "8", icon: "Folder" as const },
 ];
 
@@ -31,7 +32,7 @@ const ProfileSection = () => {
                 new ideas and make the world a better place. Thank you for your support!
               </p>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center p-4 rounded-xl bg-muted/30">
                     <Icon name={stat.icon} size={20} className="mx-auto mb-2 text-primary" />
