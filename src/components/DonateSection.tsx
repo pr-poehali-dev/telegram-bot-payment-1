@@ -6,14 +6,6 @@ import Icon from "@/components/ui/icon";
 import { useToast } from "@/hooks/use-toast";
 
 const WALLETS = {
-  bitcoin: {
-    name: "Bitcoin",
-    symbol: "₿",
-    address: "bc1qxxxxxxxxxxxxxxxxxxxxxxxxx",
-    color: "from-orange-500 to-yellow-500",
-    glow: "glow-pink",
-    icon: "Bitcoin" as const,
-  },
   tron: {
     name: "TRON (TRC-20)",
     symbol: "◈",
@@ -22,18 +14,10 @@ const WALLETS = {
     glow: "glow-pink",
     icon: "Coins" as const,
   },
-  ethereum: {
-    name: "Ethereum",
-    symbol: "Ξ",
-    address: "0xYourEthereumAddressHere",
-    color: "from-indigo-500 to-purple-500",
-    glow: "glow-purple",
-    icon: "Gem" as const,
-  },
   paypal: {
-    name: "PayPal",
+    name: "PayPal (Friends & Family)",
     symbol: "💳",
-    address: "paypal.me/yourlink",
+    address: "greggorywright@aol.com",
     color: "from-blue-500 to-cyan-500",
     glow: "glow-blue",
     icon: "CreditCard" as const,
@@ -101,7 +85,7 @@ const DonateSection = () => {
         </div>
 
         <Tabs defaultValue="tron" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-card/50 border border-border/30 p-1 mb-6 h-auto">
+          <TabsList className="grid grid-cols-2 bg-card/50 border border-border/30 p-1 mb-6 h-auto">
             {Object.entries(WALLETS).map(([key, wallet]) => (
               <TabsTrigger
                 key={key}
@@ -148,12 +132,21 @@ const DonateSection = () => {
                   </div>
 
                   {key === "paypal" && (
-                    <Button
-                      className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-heading font-semibold px-8 py-5 text-lg hover:opacity-90 transition-all"
-                    >
-                      <Icon name="ExternalLink" size={18} />
-                      Открыть PayPal
-                    </Button>
+                    <div className="space-y-3">
+                      <p className="text-sm text-muted-foreground">Отправьте на email выше через Friends & Family</p>
+                      <a
+                        href="https://www.paypal.com/paypalme/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-heading font-semibold px-8 py-5 text-lg hover:opacity-90 transition-all"
+                        >
+                          <Icon name="ExternalLink" size={18} />
+                          Открыть PayPal
+                        </Button>
+                      </a>
+                    </div>
                   )}
                 </div>
               </Card>

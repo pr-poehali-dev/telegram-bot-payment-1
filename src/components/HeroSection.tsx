@@ -30,7 +30,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         </h1>
 
         <p className="opacity-0 animate-fade-in-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Быстрые и безопасные пожертвования через Bitcoin, Ethereum, TRON и PayPal.
+          Быстрые и безопасные пожертвования через TRON TRC-20 и PayPal.
           Поддержи любимого автора в один клик.
         </p>
 
@@ -56,20 +56,12 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
 
         <div className="opacity-0 animate-fade-in-delay-4 mt-16 flex items-center justify-center gap-8 text-muted-foreground">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">₿</span>
-            <span className="text-sm">Bitcoin</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">Ξ</span>
-            <span className="text-sm">Ethereum</span>
-          </div>
-          <div className="flex items-center gap-2">
             <span className="text-2xl">◈</span>
-            <span className="text-sm">TRON</span>
+            <span className="text-sm">TRON TRC-20</span>
           </div>
           <div className="flex items-center gap-2">
             <Icon name="CreditCard" size={20} />
-            <span className="text-sm">PayPal</span>
+            <span className="text-sm">PayPal F&F</span>
           </div>
         </div>
       </div>
